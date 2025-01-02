@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login, Signup, Forgot Password</title>
+    
+
+
+    <style>
+        body {
+            background-image: url("./images/img.jpeg");
+            height: 100vh;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-position:center;
+            margin:0;
+            padding:0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 70px auto;
+            padding: 50px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: initial;
+            background-color: white;
+            background-image: url("./images/cimage.jpg");
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #4CAF50;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Login Page -->
+<div class="container" id="loginPage">
+    <h2>Login</h2>
+    <form action="#" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <div class="link">
+        <p><a href="#signupPage" onclick="showSignupPage()">Don't have an account? Sign up</a></p>
+        <p><a href="#forgotPasswordPage" onclick="showForgotPasswordPage()">Forgot Password?</a></p>
+    </div>
+</div>
+
+<!-- Signup Page -->
+<div class="container" id="signupPage" style="display: none;">
+    <h2>Sign Up</h2>
+    <form action="#" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Sign Up">
+    </form>
+    <div class="link">
+        <p><a href="#loginPage" onclick="showLoginPage()">Already have an account? Login</a></p>
+    </div>
+</div>
+
+<!-- Forgot Password Page -->
+<div class="container" id="forgotPasswordPage" style="display: none;">
+    <h2>Forgot Password</h2>
+    <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="submit" value="Send Reset Link">
+    </form>
+    <div class="link">
+        <p><a href="#loginPage" onclick="showLoginPage()">Back to Login</a></p>
+    </div>
+</div>
+
+<!-- Reset Password Page -->
+<div class="container" id="resetPasswordPage" style="display: none;">
+    <h2>Reset Password</h2>
+    <form action="#" method="POST">
+        <input type="password" name="newPassword" placeholder="New Password" required>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+        <input type="submit" value="Reset Password">
+    </form>
+    <div class="link">
+        <p><a href="#loginPage" onclick="showLoginPage()">Back to Login</a></p>
+    </div>
+</div>
+
+<script>
+    function showLoginPage() {
+        document.getElementById('loginPage').style.display = 'block';
+        document.getElementById('signupPage').style.display = 'none';
+        document.getElementById('forgotPasswordPage').style.display = 'none';
+        document.getElementById('resetPasswordPage').style.display = 'none';
+    }
+
+    function showSignupPage() {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('signupPage').style.display = 'block';
+        document.getElementById('forgotPasswordPage').style.display = 'none';
+        document.getElementById('resetPasswordPage').style.display = 'none';
+    }
+
+    function showForgotPasswordPage() {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('signupPage').style.display = 'none';
+        document.getElementById('forgotPasswordPage').style.display = 'block';
+        document.getElementById('resetPasswordPage').style.display = 'none';
+    }
+
+    function showResetPasswordPage() {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('signupPage').style.display = 'none';
+        document.getElementById('forgotPasswordPage').style.display = 'none';
+        document.getElementById('resetPasswordPage').style.display = 'block';
+       
+
+
+    }
+</script>
+
+</body>
+</html>
